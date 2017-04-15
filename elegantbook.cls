@@ -130,8 +130,6 @@
  bookmarksnumbered  =true,
  bookmarksopen      =true, 
  pdfsubject         =\@author \@title Book,
- pdfkeywords        ={ElegantBook},
- pdfcreator         ={XeLaTeX with ElegantBook class},
  colorlinks,
  linkcolor          =main,
  plainpages         =false,
@@ -187,24 +185,25 @@
 
 
 %%字体设置
-\RequirePackage{fontenc}
-\RequirePackage[no-math,cm-default]{fontspec}
+\RequirePackage{indentfirst} %首行缩进
+%\RequirePackage{fontenc}
+\RequirePackage[no-math]{fontspec}
 \defaultfontfeatures{Mapping=tex-text} 
-\RequirePackage{xunicode}
+%\RequirePackage{xunicode}
 \RequirePackage{xltxtra} 
 \setmainfont[Ligatures=TeX]{Minion Pro} %  (\textrm)
 \setsansfont{Myriad Pro} %  (\textsf)
-\setmonofont{Inconsolata}%Palatino Linotype
+\setmonofont{Courier New}% 设置Courier New字体
 %-中文字体设置-%
-\RequirePackage{xeCJK}
-\setCJKmainfont[BoldFont={黑体},ItalicFont={楷体}]{华文中宋}%方正书宋_GBK Adobe Song Std L
-\setCJKsansfont[BoldFont={黑体}]{方正中等线简体}
-\setCJKmonofont{方正中等线简体}
+\RequirePackage[SlantFont]{xeCJK}
+\setCJKmainfont{思源宋体}  % Adobe 思源宋体
+\setCJKsansfont{思源宋体}
+\setCJKmonofont{思源宋体}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 
-\setCJKfamilyfont{new}{方正苏新诗柳楷简体}
-\setCJKfamilyfont{note}{方正启体简体}
+\setCJKfamilyfont{new}{思源宋体}
+\setCJKfamilyfont{note}{思源宋体}
 \newfontfamily\gara{Adobe Garamond Pro}
 
 %% 定理\引理\定义样式设置
@@ -402,9 +401,9 @@
 \begin{flushright}
 \color{seco}
 \rule{0.45\textwidth}{1pt}\\
-整理：{\color{main}\@author}\\
+整理：{\color{main}\@author}\\      %此处自定义
 整理时间：{\color{main}\today}\\
-Email: \hyperlink{\the\email}{\the\email}\\
+GitHub: \hyperlink{\the\email}{\the\email}\\
 \rule{0.45\textwidth}{1pt}
 \end{flushright}
 \vfill
